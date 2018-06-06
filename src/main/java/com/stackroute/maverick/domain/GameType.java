@@ -1,67 +1,53 @@
 package com.stackroute.maverick.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "gametype")
 public class GameType {
 
 	@Id
 	private int gameTypeId;
-	private String singlePlayerTimeBasedGame;
+	private String gameTypeName;
+	private String gameTypeDescription;
+	/*private String singlePlayerTimeBasedGame;
 	private String multiPlayerFastestFingerFirst;
 	private String singlePlayerAdaptiveGame;
-	
+	*/
 	public GameType() {
 		super();
 		
 	}
-
-	public GameType(int gameTypeId, String singlePlayerTimeBasedGame, String multiPlayerFastestFingerFirst,
-			String singlePlayerAdaptiveGame) {
+	public GameType(int gameTypeId, String gameTypeName, String gameTypeDescription) {
 		super();
 		this.gameTypeId = gameTypeId;
-		this.singlePlayerTimeBasedGame = singlePlayerTimeBasedGame;
-		this.multiPlayerFastestFingerFirst = multiPlayerFastestFingerFirst;
-		this.singlePlayerAdaptiveGame = singlePlayerAdaptiveGame;
+		this.gameTypeName = gameTypeName;
+		this.gameTypeDescription = gameTypeDescription;
 	}
-
 	public int getGameTypeId() {
 		return gameTypeId;
 	}
-
 	public void setGameTypeId(int gameTypeId) {
 		this.gameTypeId = gameTypeId;
 	}
-
-	public String getSinglePlayerTimeBasedGame() {
-		return singlePlayerTimeBasedGame;
+	public String getGameTypeName() {
+		return gameTypeName;
 	}
-
-	public void setSinglePlayerTimeBasedGame(String singlePlayerTimeBasedGame) {
-		this.singlePlayerTimeBasedGame = singlePlayerTimeBasedGame;
+	public void setGameTypeName(String gameTypeName) {
+		this.gameTypeName = gameTypeName;
 	}
-
-	public String getMultiPlayerFastestFingerFirst() {
-		return multiPlayerFastestFingerFirst;
+	public String getGameTypeDescription() {
+		return gameTypeDescription;
 	}
-
-	public void setMultiPlayerFastestFingerFirst(String multiPlayerFastestFingerFirst) {
-		this.multiPlayerFastestFingerFirst = multiPlayerFastestFingerFirst;
+	public void setGameTypeDescription(String gameTypeDescription) {
+		this.gameTypeDescription = gameTypeDescription;
 	}
-
-	public String getSinglePlayerAdaptiveGame() {
-		return singlePlayerAdaptiveGame;
-	}
-
-	public void setSinglePlayerAdaptiveGame(String singlePlayerAdaptiveGame) {
-		this.singlePlayerAdaptiveGame = singlePlayerAdaptiveGame;
-	}
-
 	@Override
 	public String toString() {
-		return "GameType [gameTypeId=" + gameTypeId + ", singlePlayerTimeBasedGame=" + singlePlayerTimeBasedGame
-				+ ", multiPlayerFastestFingerFirst=" + multiPlayerFastestFingerFirst + ", singlePlayerAdaptiveGame="
-				+ singlePlayerAdaptiveGame + "]";
+		return "GameType [gameTypeId=" + gameTypeId + ", gameTypeName=" + gameTypeName + ", gameTypeDescription="
+				+ gameTypeDescription + "]";
 	}
+
 	
 	
 }

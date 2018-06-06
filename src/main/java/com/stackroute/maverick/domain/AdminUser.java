@@ -1,14 +1,17 @@
 package com.stackroute.maverick.domain;
 
-public class User {
+public class AdminUser {
 
 	private int userId;
 	private String userName;
-	public User() {
+	
+	
+	
+	public AdminUser() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	public User(int userId, String userName) {
+	public AdminUser(int userId, String userName) {
 		super();
 		this.userId = userId;
 		this.userName = userName;

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomException extends Exception {
 
-private int code;
+	private int code;
 	
 	private String message;
 

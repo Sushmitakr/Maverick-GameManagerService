@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="gameTopic")
 public class Topic {
 
-	 private int topicId;
+	 	private int topicId;
 	    private String topicName;
 	    private String topicImage;
 	    private List<Questions> questions;

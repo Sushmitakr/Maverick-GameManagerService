@@ -25,13 +25,14 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.stackroute.gameManager.domain.Game;
-import com.stackroute.gameManager.domain.GameQuestionLevel;
-import com.stackroute.gameManager.domain.GameQuestionScore;
-import com.stackroute.gameManager.domain.GameQuestionTime;
-import com.stackroute.gameManager.domain.Questions;
-import com.stackroute.gameManager.gameManagerService.GameManagerService;
-import com.stackroute.gameManager.gameManagerService.GameManagerServiceMONGOImpl;
+import com.stackroute.maverick.controller.GameManagerController;
+import com.stackroute.maverick.domain.Game;
+import com.stackroute.maverick.domain.GameQuestionLevel;
+import com.stackroute.maverick.domain.GameQuestionScore;
+import com.stackroute.maverick.domain.GameQuestionTime;
+import com.stackroute.maverick.domain.Questions;
+import com.stackroute.maverick.gameManagerService.GameManagerServiceMONGOImpl;
+
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value=GameManagerController.class, secure = false)
@@ -48,10 +49,11 @@ public class GameControllerTest {
 	@Before
 	public void set()
 	{
-	GameQuestionLevel gameQuestionLevel = new GameQuestionLevel(1, 5, 6, 4); 
-	GameQuestionScore gameQuestionScore = new GameQuestionScore(1, 5, 6, 4);
-	GameQuestionTime gameQuestionTime = new GameQuestionTime(1,5,6,4);
-	Questions question = new Questions(221, 2, "heighest runscorer in odis?", "virak", "ponting", "sachin", "kallis", "sachin" );
+	GameQuestionLevel gameQuestionLevel = new GameQuestionLevel(1, 5, 6); 
+	GameQuestionScore gameQuestionScore = new GameQuestionScore(1, 5, 6);
+	GameQuestionTime gameQuestionTime = new GameQuestionTime(1,5,6);
+	User user = new User();
+	Questions question = new Questions( 1, 2, "chemical form of water?", "manual", "2HO", "H2O2", "H2O", "none",);
 	List<Questions> questions = new ArrayList<Questions>();
 	questions.add(question);
 	Game mockGame = new Game(6, "sush", new Date(), "World", "Travel", "SP", "java is a beautifull subject","description of single player cricket game","rules jbsjvl", 2666,  gameQuestionLevel, gameQuestionTime, gameQuestionScore, questions);
@@ -105,9 +107,9 @@ public class GameControllerTest {
 	@Test
 	public void showAllGametest() throws Exception {
 		
-		GameQuestionLevel gameQuestionLevel = new GameQuestionLevel(1, 5, 6, 4); 
-		GameQuestionScore gameQuestionScore = new GameQuestionScore(1, 5, 6, 4);
-		GameQuestionTime gameQuestionTime = new GameQuestionTime(1,5,6,4);
+		GameQuestionLevel gameQuestionLevel = new GameQuestionLevel(1, 5, 6); 
+		GameQuestionScore gameQuestionScore = new GameQuestionScore(1, 5, 6);
+		GameQuestionTime gameQuestionTime = new GameQuestionTime(1,5,6);
 		Questions question = new Questions(221, 2, "heighest runscorer in odis?", "virak", "ponting", "sachin", "kallis", "sachin" );
 		List<Questions> questions = new ArrayList<Questions>();
 		questions.add(question);
@@ -148,5 +150,4 @@ public class GameControllerTest {
 	}
 
 	
-}
-*/
+}*/

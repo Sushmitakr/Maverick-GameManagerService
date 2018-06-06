@@ -6,8 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "gamequestionscore")
 public class GameQuestionScore {
 
-	@Id
-	private int gqScoreId;
+	/*@Id
+	private int gqScoreId;*/
 	private int easyQuestionsScore;
 	private int mediumQuestionsScore;
 	private int advanceQuestionsScore;
@@ -16,21 +16,11 @@ public class GameQuestionScore {
 		// TODO Auto-generated constructor stub
 	}
 
-	public GameQuestionScore(int gqScoreId, int easyQuestionsScore, int mediumQuestionsScore,
-			int advanceQuestionsScore) {
+	public GameQuestionScore(int easyQuestionsScore, int mediumQuestionsScore, int advanceQuestionsScore) {
 		super();
-		this.gqScoreId = gqScoreId;
 		this.easyQuestionsScore = easyQuestionsScore;
 		this.mediumQuestionsScore = mediumQuestionsScore;
 		this.advanceQuestionsScore = advanceQuestionsScore;
-	}
-
-	public int getGqScoreId() {
-		return gqScoreId;
-	}
-
-	public void setGqScoreId(int gqScoreId) {
-		this.gqScoreId = gqScoreId;
 	}
 
 	public int getEasyQuestionsScore() {
@@ -59,9 +49,11 @@ public class GameQuestionScore {
 
 	@Override
 	public String toString() {
-		return "GameQuestionScore [gqScoreId=" + gqScoreId + ", easyQuestionsScore=" + easyQuestionsScore
-				+ ", mediumQuestionsScore=" + mediumQuestionsScore + ", advanceQuestionsScore=" + advanceQuestionsScore
-				+ "]";
+		return "GameQuestionScore [easyQuestionsScore=" + easyQuestionsScore + ", mediumQuestionsScore="
+				+ mediumQuestionsScore + ", advanceQuestionsScore=" + advanceQuestionsScore + "]";
 	}
 
+	
+
+	
 }

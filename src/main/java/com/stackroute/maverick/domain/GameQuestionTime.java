@@ -6,8 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "gamequestiontime")
 public class GameQuestionTime {
 
-	@Id
-	private int gqTimeId;
+	/*@Id
+	private int gqTimeId;*/
 	private int easyQuestionsTime;
 	private int mediumQuestionsTime;
 	private int advanceQuestionsTime;
@@ -16,20 +16,11 @@ public class GameQuestionTime {
 		// TODO Auto-generated constructor stub
 	}
 
-	public GameQuestionTime(int gqTimeId, int easyQuestionsTime, int mediumQuestionsTime, int advanceQuestionsTime) {
+	public GameQuestionTime(int easyQuestionsTime, int mediumQuestionsTime, int advanceQuestionsTime) {
 		super();
-		this.gqTimeId = gqTimeId;
 		this.easyQuestionsTime = easyQuestionsTime;
 		this.mediumQuestionsTime = mediumQuestionsTime;
 		this.advanceQuestionsTime = advanceQuestionsTime;
-	}
-
-	public int getGqTimeId() {
-		return gqTimeId;
-	}
-
-	public void setGqTimeId(int gqTimeId) {
-		this.gqTimeId = gqTimeId;
 	}
 
 	public int getEasyQuestionsTime() {
@@ -58,9 +49,11 @@ public class GameQuestionTime {
 
 	@Override
 	public String toString() {
-		return "GameQuestionTime [gqTimeId=" + gqTimeId + ", easyQuestionsTime=" + easyQuestionsTime
-				+ ", mediumQuestionsTime=" + mediumQuestionsTime + ", advanceQuestionsTime=" + advanceQuestionsTime
-				+ "]";
+		return "GameQuestionTime [easyQuestionsTime=" + easyQuestionsTime + ", mediumQuestionsTime="
+				+ mediumQuestionsTime + ", advanceQuestionsTime=" + advanceQuestionsTime + "]";
 	}
+
+	
+	
 
 }

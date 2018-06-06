@@ -1,6 +1,8 @@
 FROM openjdk
 VOLUME /tmp
-ADD target/GameManager-0.0.1-SNAPSHOT.jar usr/project/game_Manager-app.jar
-WORKDIR usr/project/
-RUN sh -c 'touch game_Manager-app.jar'
-ENTRYPOINT ["java", "-Dspring.data.mongodb.uri=mongodb://mongo-container/gamemanagerdb", "-jar","game_Manager-app.jar"]
+WORKDIR usr/gamemanager
+ADD ./target/GameManager-0.0.1-SNAPSHOT.jar /usr/gamemanager.jar
+RUN ls /usr/gamemanager
+EXPOSE 8080
+RUN bash -c 'touch /usr/gamemanager.jar'
+ENTRYPOINT ["java", "-Dspring.data.mongodb.uri=mongodb://mongo-container/gamemanagerdb", "-jar","/usr/gamemanager.jar"]
