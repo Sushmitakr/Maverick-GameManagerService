@@ -281,7 +281,8 @@ public class GameManagerController {
 	    Iterable<Game> gameList = gameManagerService.getAllGameManagers();
 	    
 	    
-	    //Iterable<MultiPlayerGame> multiGameList = gameManagerService.getAllMultiPlayerGame();
+	  //  Iterable<MultiPlayerGame> multiGameList = gameManagerService.getAllMultiPlayerGame();
+	    
 //		System.out.println("Games---->>" + gameList);
 		//System.out.println("MultiGames------>>>" + multiGameList);
 //		ArrayList<Object> list =list.add(gameList);
@@ -298,16 +299,16 @@ public class GameManagerController {
 			}
 		}
 		
-//		for(MultiPlayerGame mg : multiGameList) {
-//			System.out.println("Entered for MultiPlayerGame");
-//			if(topicName.equalsIgnoreCase(mg.getTopic().getTopicName())){
-//				list.add(mg);
-//				System.out.println("MultiPlayerGame...." + mg);
-//			}
-//			else {
-//				return new ResponseEntity<>(list, HttpStatus.OK);
-//			}
-//		}
+		/*for(MultiPlayerGame mg : multiGameList) {
+			System.out.println("Entered for MultiPlayerGame");
+			if(topicName.equalsIgnoreCase(mg.getTopic().getTopicName())){
+				list.add(mg);
+				System.out.println("MultiPlayerGame...." + mg);
+			}
+			else {
+				return new ResponseEntity<>(list, HttpStatus.OK);
+			}
+		}*/
 		
 		return new ResponseEntity<>(list, HttpStatus.OK);	
 	}
